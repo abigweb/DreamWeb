@@ -7,7 +7,7 @@
 
     <!--欢迎页面-->
     <welcome-file-list>
-        <welcome-file>Home/SayHello</welcome-file>
+        <welcome-file>hello.html</welcome-file>
     </welcome-file-list>
 
     <!--配置springmvc DispatcherServlet-->
@@ -20,7 +20,7 @@
             <!--SpringMVC配置参数文件的位置 -->
             <param-name>contextConfigLocation</param-name>
             <!--默认名称为springmvc-servlet.xml存放在src/main/java/下 -->
-            <param-value>classpath*:springmvc-servlet.xml</param-value>
+            <param-value>classpath:springmvc-servlet.xml</param-value>
         </init-param>
         <!-- 启动顺序，数字越小，启动越早 -->
         <load-on-startup>1</load-on-startup>
