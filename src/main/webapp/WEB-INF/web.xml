@@ -8,6 +8,7 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!--配置springmvc DispatcherServlet-->
     <servlet>
         <!--名称 -->
         <servlet-name>springmvc</servlet-name>
@@ -16,16 +17,37 @@
         <init-param>
             <!--SpringMVC配置参数文件的位置 -->
             <param-name>contextConfigLocation</param-name>
-            <!--默认名称为ServletName-servlet.xml -->
+            <!--默认名称为springmvc-servlet.xml存放在src/main/java/下 -->
             <param-value>classpath*:springmvc-servlet.xml</param-value>
         </init-param>
         <!-- 启动顺序，数字越小，启动越早 -->
         <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
     </servlet>
-
     <!--所有请求都会被springmvc拦截 -->
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <!--过滤器,可以根据页面提交的URL地址进行过滤-->
+    <filter>
+        <!-- Filter的名字 -->
+        <filter-name>encodingFilter</filter-name>
+        <!-- Filter的实现类 -->
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <!-- Filter负责拦截的URL全部以/的请求,如果<url-pattern>/*.action </>,将会以拦截*.action的请求-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
