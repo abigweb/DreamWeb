@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloWorld {
 	@RequestMapping("/SayHello")
 	public String SayHi(Model model) {
-		model.addAttribute("message", "Hello Spring MVC!");
-		return "hello_world";
+		model.addAttribute("message", "Hello Spring MVC! home/helloworld");
+		return "home/helloworld";
 	}
 }
