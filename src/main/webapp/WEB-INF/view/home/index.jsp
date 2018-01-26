@@ -12,6 +12,35 @@
 <body>
 <h2>
     ${message}
+        <table >
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td>AGE</td>
+                <td>DATA</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
 </h2>
 </body>
 </html>
