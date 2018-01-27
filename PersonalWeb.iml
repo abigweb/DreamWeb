@@ -20,6 +20,7 @@
         <fileset id="fileset" name="Springmvc Servlet" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/springmvc-servlet.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/springmvc-servlet.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/resources/spring/springmvc-servlet.xml</file>
         </fileset>
       </configuration>
     </facet>

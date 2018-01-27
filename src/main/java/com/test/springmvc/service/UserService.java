@@ -13,8 +13,7 @@ import java.util.List;
 @Service
 public class UserService {
     
-    @Autowired
-    UserDAO userdao;
+    public UserDAO userdao = new UserDAO();
     
     public List<User> queryAllUsers() {
         return userdao.getAll();

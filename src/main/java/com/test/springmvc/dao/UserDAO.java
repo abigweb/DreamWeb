@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * 用户数据访问对象
  */
-@Repository
 public class UserDAO implements IUserDAO {
 
     private static List<User> users = new ArrayList<User>();
