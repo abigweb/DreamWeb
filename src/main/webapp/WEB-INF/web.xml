@@ -33,6 +33,7 @@
         <!-- Filter的实现类 -->
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
+            <!-- 防止中文字符乱码 -->
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
@@ -46,4 +47,26 @@
         <!-- Filter负责拦截的URL全部以/的请求,如果<url-pattern>/*.action </>,将会以拦截*.action的请求-->
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!-- jsp页面需要引入的标签,存放在本地项目中,避免从网络下载 -->
+    <!--下载地址：http://archive.apache.org/dist/jakarta/taglibs/standard/binaries/ -->
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+            <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/fmt</taglib-uri>
+            <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/functions</taglib-uri>
+            <taglib-location>/WEB-INF/tld/fn.tld</taglib-location>
+        </taglib>
+        <!--<taglib>-->
+            <!--<taglib-uri>http://www.springframework.org/tags</taglib-uri>-->
+            <!--<taglib-location>/WEB-INF/tld/spring.tld</taglib-location>-->
+        <!--</taglib>-->
+    </jsp-config>
+
 </web-app>

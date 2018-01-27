@@ -1,13 +1,10 @@
 package com.test.springmvc.service;
 
-import com.test.springmvc.dao.IUserDAO;
 import com.test.springmvc.dao.UserDAO;
 import com.test.springmvc.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
@@ -15,9 +12,9 @@ import java.util.List;
  */
 @Service
 public class UserService {
-    @Resource(name = "mysql")
     
-    IUserDAO userdao;
+    @Autowired
+    UserDAO userdao;
     
     public List<User> queryAllUsers() {
         return userdao.getAll();

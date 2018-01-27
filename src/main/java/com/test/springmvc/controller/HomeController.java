@@ -6,17 +6,16 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller  //声明为控制器
-@RequestMapping(path = {"/", "Home", "First"})  //请求映射
+@RequestMapping(path = {"Home","home","First","first"})  //请求映射
 public class HomeController {
     @RequestMapping(path = "/index")  //请求映射
     public String index(Model model) {
-        model.addAttribute("message", "Hello Spring MVC!");
-        return "home/index";
+        model.addAttribute("message", "Hello，你好！ 请求了index页面");
+        return "home/hello";
     }
-    
-    @RequestMapping(path = "/")  //请求映射
-    public String first(Model model) {
-        model.addAttribute("message", "Hello Spring MVC,Welcome Page!");
-        return "home/index";
+    @RequestMapping(path = "/videos")  //请求映射
+    public String videos(Model model) {
+        model.addAttribute("message", "Hello,你好！ 请求了videos页面");
+        return "home/hello";
     }
 }
