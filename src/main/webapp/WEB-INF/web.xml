@@ -25,10 +25,9 @@
         <load-on-startup>1</load-on-startup>
         <async-supported>true</async-supported>
     </servlet>
-    <!--所有请求都会被springmvc拦截 -->
     <servlet-mapping>
-        <servlet-name>springmvc</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>springmvc</servlet-name>  <!--指定了serevlet配置文件为myspring-->
+        <url-pattern>/</url-pattern>      <!--所有请求都会被springmvc拦截 -->
     </servlet-mapping>
 
     <!--过滤器,可以根据页面提交的URL地址进行过滤-->

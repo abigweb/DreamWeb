@@ -1,4 +1,4 @@
-package com.test.springmvc.utils;
+package com.springmvc.utils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

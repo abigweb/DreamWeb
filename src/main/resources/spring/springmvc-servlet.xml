@@ -11,11 +11,11 @@
         http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
     <!-- 自动扫描该包，实现支持注解的IOC，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.test.springmvc.controller">
+    <context:component-scan base-package="com.springmvc.controller">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!-- Spring MVC不处理静态资源 -->
+    <!-- 静态资源(js、image等)的访问 -->
     <mvc:default-servlet-handler/>
     <!--如果发现是静态资源的请求，就将该请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处-->
     <!--本项目把静态资源放在了WEB-INF的statics目录下，资源映射如下-->

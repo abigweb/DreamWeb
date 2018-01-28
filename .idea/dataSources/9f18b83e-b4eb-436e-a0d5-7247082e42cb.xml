@@ -4,21 +4,21 @@
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="forweb">
+    <schema id="2" parent="1" name="information_schema">
       <Current>1</Current>
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="3" parent="1" name="mysql">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="4" parent="1" name="performance_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="5" parent="1" name="sys">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="6" parent="1" name="web">
       <Visible>1</Visible>
-      <Collation>utf8_general_ci</Collation>
-    </schema>
-    <schema id="3" parent="1" name="information_schema">
-      <Collation>utf8_general_ci</Collation>
-    </schema>
-    <schema id="4" parent="1" name="mysql">
-      <Collation>utf8_general_ci</Collation>
-    </schema>
-    <schema id="5" parent="1" name="performance_schema">
-      <Collation>utf8_general_ci</Collation>
-    </schema>
-    <schema id="6" parent="1" name="sys">
       <Collation>utf8_general_ci</Collation>
     </schema>
     <collation id="7" parent="1" name="armscii8_bin">
@@ -909,66 +909,28 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="229" parent="2" name="test1">
+    <table id="229" parent="6" name="user">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="230" parent="2" name="user">
-      <Engine>InnoDB</Engine>
-    </table>
-    <column id="231" parent="229" name="runoob_id">
+    <column id="230" parent="229" name="id">
       <Position>1</Position>
-      <DataType>int(10) unsigned|0</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="229" name="runoob_title">
+    <column id="231" parent="229" name="username">
       <Position>2</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="233" parent="229" name="runoob_author">
-      <Position>3</Position>
-      <DataType>varchar(40)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="234" parent="229" name="submission_date">
-      <Position>4</Position>
-      <DataType>date|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="235" parent="229" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>runoob_id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="236" parent="230" name="Id">
-      <Position>1</Position>
-      <Comment>编号</Comment>
-      <DataType>int(255)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="237" parent="230" name="name">
-      <Position>2</Position>
-      <Comment>姓名</Comment>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="230" name="age">
+    <column id="232" parent="229" name="passward">
       <Position>3</Position>
-      <Comment>年龄</Comment>
-      <DataType>int(5)|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="239" parent="230" name="PRIMARY">
+    <key id="233" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>Id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>
