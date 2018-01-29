@@ -1,8 +1,10 @@
 package com.springmvc.service;
 
+import java.util.List;
 import com.springmvc.model.User;
 
 public interface IUserService {
-    public User findUserById(int id);
-    public void addUser(User user);
+    User findUserById(int id);
+    void addUser(User user);
+    List<User> getAllUsers();
 }

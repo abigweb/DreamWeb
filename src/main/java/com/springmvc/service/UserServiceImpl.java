@@ -6,10 +6,8 @@ import com.springmvc.model.User;
 
 import org.springframework.stereotype.Service;
 
-/**
- * 用户业务
- */
-@Service
+import java.util.List;
+
 public class UserServiceImpl implements IUserService {
     
     private IUserDao userDao;
@@ -23,5 +21,9 @@ public class UserServiceImpl implements IUserService {
     }
     public void addUser(User user){
         userDao.addUser(user);
+    }
+    
+    public List<User> getAllUsers() {
+        return userDao.getAllUsers();
     }
 }

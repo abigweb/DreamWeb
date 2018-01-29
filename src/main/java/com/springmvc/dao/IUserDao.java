@@ -2,7 +2,10 @@ package com.springmvc.dao;
 
 import com.springmvc.model.User;
 
+import java.util.List;
+
 public interface IUserDao {
-    public User findUserById(int id); //查询
-    public void addUser(User user); //添加
+    User findUserById(int id); //查询
+    void addUser(User user); //添加
+    List<User> getAllUsers();
 }

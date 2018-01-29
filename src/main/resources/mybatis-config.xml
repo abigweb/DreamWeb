@@ -24,7 +24,7 @@
     </environments>
     <!--mapping文件路径配置-->
     <mappers>
-        <mapper resource="userMapper.xml" />
-        <!--<package name="com.springmvc.dao"></package>-->
+        <package name="com.springmvc.mapper"></package>
+        <!--<mapper class="com.springmvc.mapper.UserMapper"/>-->
     </mappers>
 </configuration>
