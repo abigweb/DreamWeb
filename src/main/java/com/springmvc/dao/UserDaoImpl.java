@@ -16,7 +16,7 @@ public class UserDaoImpl implements IUserDao {
     private SqlSessionFactory sessionFactory;
     private SqlSession session;
     public UserDaoImpl() {
-        String resource = "config/mybatis-config.xml";
+        String resource = "mybatis-config.xml";
         try {
             Reader reader = Resources.getResourceAsReader(resource);
             sessionFactory = new SqlSessionFactoryBuilder().build(reader);

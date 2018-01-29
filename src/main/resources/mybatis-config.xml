@@ -10,10 +10,6 @@
         <!--当设置为‘true’的时候，懒加载的对象可能被任何懒属性全部加载。否则，每个属性都按需加载。默认true-->
         <setting name="aggressiveLazyLoading" value="false"/>
     </settings>
-<!--    <typeAliases>
-        <package name="cn.springmvc.model"/>
-        &lt;!&ndash;<typeAlias type="com.springmvc.model.User" alias="User"/>&ndash;&gt;
-    </typeAliases>-->
     <!--对事务的管理和连接池的配置-->
     <environments default="development">
         <environment id="development">
