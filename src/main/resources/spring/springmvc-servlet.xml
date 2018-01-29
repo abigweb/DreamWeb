@@ -35,10 +35,8 @@
     <bean id="defaultViewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <!-- 前缀 -->
-        <property name="prefix" value="/view/"/>
-        <!-- 后缀 -->
-        <property name="suffix" value=".jsp"/>
+        <property name="prefix" value="/WEB-INF/view/"/>          <!-- 前缀 -->
+        <property name="suffix" value=".jsp"/>        <!-- 后缀 -->
     </bean>
 
     <!-- springmvc文件上传需要配置的节点-->

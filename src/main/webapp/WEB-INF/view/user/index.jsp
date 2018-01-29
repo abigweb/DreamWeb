@@ -9,8 +9,8 @@
 <body>
 <h2>Hello World!</h2>
 <sf:form method="post" modelAttribute="user" action="${basePath}//toJson">
-    用户名:<sf:input path="username"/>
-    密码:<sf:password path="password"/>
+    用户名:<sf:input path="username"/> <br/>
+    密码:<sf:password path="password"/> <br/>
     <input type="submit" value="提交">
 </sf:form>
 </body>

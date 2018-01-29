@@ -3,10 +3,10 @@ CREATE DATABASE IF NOT EXISTS web
 
 USE web;  /*使用库*/
 CREATE TABLE IF NOT EXISTS `user`(
-  id INT(11),
+  id INT(11) DEFAULT NULL,
   username VARCHAR(255),
   password INT(11),
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`username`)
 )ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 INSERT INTO `user` VALUES (1, '张三', 123);
