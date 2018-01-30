@@ -10,6 +10,18 @@
         <welcome-file>hello.html</welcome-file>
     </welcome-file-list>
 
+    <!-- 指定Spring配置文件的位置和名称 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/spring/spring-*.xml</param-value>
+        <!--注意，是Spring的配置文件，不是SpringMVC的配置文件-->
+    </context-param>
+    
+    <!--注册ServletContext监听器-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <!--配置springmvc DispatcherServlet-->
     <servlet>
         <!--名称 -->
@@ -23,7 +35,6 @@
         </init-param>
         <!-- 启动顺序，数字越小，启动越早 -->
         <load-on-startup>1</load-on-startup>
-        <async-supported>true</async-supported>
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>  <!--指定了serevlet配置文件为myspring-->
