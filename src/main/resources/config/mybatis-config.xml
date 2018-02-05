@@ -3,28 +3,23 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-    <properties resource="mysql.properties"/> <!--连接信息存放在mysql.properties文件中-->
-    <settings>
-        <!--全局性设置懒加载。如果设为‘false’，则所有相关联的都会被初始化加载;默认false-->
+<!--    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        &lt;!&ndash;全局性设置懒加载。如果设为‘false’，则所有相关联的都会被初始化加载;默认false&ndash;&gt;
         <setting name="lazyLoadingEnabled" value="true"/>
-        <!--当设置为‘true’的时候，懒加载的对象可能被任何懒属性全部加载。否则，每个属性都按需加载。默认true-->
+        &lt;!&ndash;当设置为‘true’的时候，懒加载的对象可能被任何懒属性全部加载。否则，每个属性都按需加载。默认true&ndash;&gt;
         <setting name="aggressiveLazyLoading" value="false"/>
-    </settings>
-    <!--对事务的管理和连接池的配置-->
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">  <!--POOLED：使用Mybatis自带的数据库连接池来管理数据库连接-->
-                <property name="driver" value="${jdbc.driver}"/>
-                <property name="url" value="${jdbc.url}"/>
-                <property name="username" value="${jdbc.username}"/>
-                <property name="password" value="${jdbc.password}"/>
-            </dataSource>
-        </environment>
-    </environments>
-    <!--mapping文件路径配置-->
+
+        &lt;!&ndash;<setting name="logImpl" value="LOG4J2"/>&ndash;&gt;
+    </settings>-->
+
+    <!--指实体类指定简单类名（别名）-->
+    <typeAliases>
+        <package name="com.springmvc.model"/>
+    </typeAliases>
+
+<!--    &lt;!&ndash;mapping文件路径配置&ndash;&gt;
     <mappers>
-        <mapper resource="userMapper.xml" />
-        <!--<package name="com.springmvc.dao"></package>-->
-    </mappers>
+        <package name="com.springmvc.dao"></package>
+    </mappers>-->
 </configuration>
