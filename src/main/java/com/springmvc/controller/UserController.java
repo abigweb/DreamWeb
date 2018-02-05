@@ -39,7 +39,7 @@ public class UserController {
         return service.findUserById(2);
     }
     
-    @RequestMapping(value="nice.do",method = RequestMethod.GET)
+    @RequestMapping(value="/nice.do",method = RequestMethod.GET)
     @ResponseBody
     public List<User> nice(Model model){
         return service.getAllUsers();
