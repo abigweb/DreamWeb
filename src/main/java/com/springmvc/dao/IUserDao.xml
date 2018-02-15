@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--配置式开发-->
+<mapper namespace="com.springmvc.dao.IUserDao">
+    <!--根据ID获取对应的值  -->
+    <select id="findUserById" parameterType="int" resultType="User">
+        select * from web.user where id = #{id}
+    </select>
+    <insert id="addUser" parameterType="User">
+        insert into web.user(username,password) values(#{username},#{password})
+    </insert>
+    <!--parameterType为输入参数 id的类型int-->
+    <!--resultType="com.springmvc.model.User"为返回值User对象-->
+</mapper>
+
+<!--MyBaits官方文档推荐使用配置式开发，这样可以充分发挥其效率；
+    但注解式开发更简洁。二者各有优缺点，可以结合使用-->
+
+
+<!--自学一下-->
+<!--在<mapper>标签中尝试以下标签的作用-->
+<!--<parameterMap id="" type=""/>-->

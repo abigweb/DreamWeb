@@ -3,28 +3,19 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         id="WebApp_ID" version="3.0">
+         version="3.0">
 
-    <!--欢迎页面-->
-    <welcome-file-list>
-        <welcome-file>hello.html</welcome-file>
-    </welcome-file-list>
-
-    <!--配置springmvc DispatcherServlet-->
-    <servlet>
-        <!--名称 -->
-        <servlet-name>springmvc</servlet-name>
-        <!-- Servlet类 -->
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!-- 启动顺序，数字越小，启动越早 -->
-        <load-on-startup>1</load-on-startup>
-        <async-supported>true</async-supported>
-    </servlet>
-    <!--所有请求都会被springmvc拦截 -->
-    <servlet-mapping>
-        <servlet-name>springmvc</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    <!-- 指定Spring配置文件的位置和名称 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/spring/spring-*.xml</param-value>
+        <!--注意，是Spring的配置文件，不是SpringMVC的配置文件-->
+    </context-param>
+    
+    <!--注册ServletContext监听器-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <!--过滤器,可以根据页面提交的URL地址进行过滤-->
     <filter>
@@ -33,6 +24,7 @@
         <!-- Filter的实现类 -->
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
+            <!-- 防止中文字符乱码 -->
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
@@ -46,4 +38,59 @@
         <!-- Filter负责拦截的URL全部以/的请求,如果<url-pattern>/*.action </>,将会以拦截*.action的请求-->
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--配置springmvc DispatcherServlet-->
+    <servlet>
+        <!--名称 -->
+        <servlet-name>springmvc</servlet-name>
+        <!-- Servlet类 -->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 配置Spring mvc下的配置文件的位置和名称 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:/spring/spring-mvc.xml</param-value>
+        </init-param>
+        <!-- 启动顺序，数字越小，启动越早 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>  <!--指定了serevlet配置文件为myspring-->
+        <url-pattern>*.do</url-pattern>      <!--所有请求都会被springmvc拦截 -->
+    </servlet-mapping>
+
+    <!-- jsp页面需要引入的标签,存放在本地项目中,避免从网络下载 -->
+    <!--下载地址：http://archive.apache.org/dist/jakarta/taglibs/standard/binaries/ -->
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+            <taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/fmt</taglib-uri>
+            <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/functions</taglib-uri>
+            <taglib-location>/WEB-INF/tld/fn.tld</taglib-location>
+        </taglib>
+        <!--<taglib>-->
+            <!--<taglib-uri>http://www.springframework.org/tags</taglib-uri>-->
+            <!--<taglib-location>/WEB-INF/tld/spring.tld</taglib-location>-->
+        <!--</taglib>-->
+    </jsp-config>
+
+    <!--欢迎页面-->
+    <welcome-file-list>
+        <welcome-file>hello.html</welcome-file>
+    </welcome-file-list>
+    
+ <!--   <error-page>
+        <error-code>404</error-code>
+        <location>/err404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/err500.html</location>
+    </error-page>-->
+
 </web-app>
